@@ -29,10 +29,10 @@ $ateez = query("SELECT *FROM ateez");; //variabel ini telah terisi dengan file d
       <th>Aksi</th>
     </tr>
 
-    <?php $i = 1;
+    <?php $n = 1;
     foreach ($ateez as $a) : ?>
       <tr>
-        <td><?= $i++; ?></td>
+        <td><?= $n++; ?></td>
         <td><?= $a['Name']; ?></td>
         <td><?= $a['Birthday']; ?></td>
         <td><?= $a['Position']; ?></td>

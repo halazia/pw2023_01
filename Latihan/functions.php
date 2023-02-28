@@ -26,3 +26,20 @@ function query($query)
 
   return $rows;
 }
+function tambah($data)
+{
+  $conn = koneksi();
+  $Name = htmlspecialchars($data['Name']);
+  $Birthday = htmlspecialchars($data['Birthday']);
+  $Position = htmlspecialchars($data['Position']);
+  $Photo = htmlspecialchars($data['Photo']);
+
+  $query = "INSERT INTO
+              ateez
+            VALUES
+            ('','$Name','$Birthday','$Position','$Photo')
+            ";
+  mysqli_query($conn, $query);
+  echo mysqli_error($conn);
+  return mysqli_affected_rows($conn);
+}

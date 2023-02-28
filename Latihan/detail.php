@@ -4,7 +4,7 @@ require 'functions.php';
 // ambil id dari URL
 $id = $_GET['id'];
 // query berdasarkan id
-$a = query("SELECT * FROM ateez WHERE No = $id");
+$a = query("SELECT * FROM ateez WHERE Name = '$id'");
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +20,6 @@ $a = query("SELECT * FROM ateez WHERE No = $id");
 <body>
   <h3>Detail My Bias</h3>
   <ul>
-    <li>No : <?= $a['No']; ?></li>
     <li>Photo : <img src="img/<?= $a['Photo']; ?>" width="100"></li>
     <li>Nama : <?= $a['Name']; ?></li>
     <li>Birthday : <?= $a['Birthday']; ?></li>

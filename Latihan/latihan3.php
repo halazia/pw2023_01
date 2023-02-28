@@ -19,6 +19,10 @@ $ateez = query("SELECT *FROM ateez");; //variabel ini telah terisi dengan file d
 
 <body>
   <h3>MY BIAS</h3>
+
+  <button><a href="Tambah.php">Tambah Data</a></button>
+  <br></br>
+
   <table border="1" cellpadding="10" cellspacing="0">
     <tr>
       <th>No</th>
@@ -34,7 +38,7 @@ $ateez = query("SELECT *FROM ateez");; //variabel ini telah terisi dengan file d
         <td><img src="img/<?= $a['Photo']; ?>" width="100"></td>
         <td><?= $a['Name']; ?></td>
         <td>
-          <a href="detail.php?id=<?= $a['No']; ?>">Lihat</a>
+          <a href="detail.php?id=<?= $a['Name']; ?>">Lihat</a>
         </td>
       </tr>
     <?php endforeach; ?>
