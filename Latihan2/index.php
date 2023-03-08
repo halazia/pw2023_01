@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['login'])) {
+  header("Location: login.php");
+  exit;
+}
 require('functions.php');
 // tampung ke variable data
 $ateez = query("SELECT *FROM ateez");  //variabel ini telah terisi dengan file database
@@ -23,6 +29,7 @@ if (isset($_POST['cari'])) {
 </head>
 
 <body>
+  <a href="logout.php">Logout</a>
   <h3>MY BIAS</h3>
 
   <button><a href="Tambah.php">Tambah Data</a></button>

@@ -60,6 +60,7 @@ function ubah($data)
   $Photo = htmlspecialchars($data['Photo']);
 
   $query = "UPDATE ateez SET
+            id = '$id',
             Name = '$Name',
             Birthday = '$Birthday',
             Position = '$Position',
@@ -68,4 +69,20 @@ function ubah($data)
   mysqli_query($conn, $query);
   echo mysqli_error($conn);
   return mysqli_affected_rows($conn);
+}
+
+function cari($keyword)
+{
+  $conn = koneksi();
+
+  $query = "SELECT * FROM ateez
+            WHERE Name LIKE '%$keyword%' OR
+            Position LIKE '%$keyword%'";
+  $result = mysqli_query($conn, $query);
+
+  $rows = [];
+  while ($row = mysqli_fetch_assoc($result)) {
+    $rows[] = $row;
+  }
+  return $rows;
 }
